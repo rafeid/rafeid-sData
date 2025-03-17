@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大屏</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr); /* 将容器分为12列 */
+            grid-gap: 10px; /* 间隔 */
+            height: 100%;
+            padding: 10px;
+        }
+        /* 为不同的iframe指定不同的列和行跨度 */
+        .large-chart {
+            grid-column: span 7; /* 占5列 */
+            grid-row: span 50; /* 占2行 */
+        }
+        .large2-chart{
+            grid-column: span 9;
+            grid-row: span 70;
+        }
+        .abc-chart{
+            grid-column: span 5; /* 占4列 */
+            grid-row: span 40;
+        }
+        .medium-chart {
+            grid-column: span 6; /* 占4列 */
+            grid-row: span 40; /* 同样占2行，可以根据需要调整 */
+        }
+        .length-chart {
+            grid-column: span 6; /* 占3列 */
+            grid-row: span 80; /* 占1行 */
+        }
+        .smo-chart{
+            grid-column: span 3;
+            grid-row: span 40;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+        }
+        .header-text {
+            grid-column: 1 / -1; /* 跨越所有列 */
+            grid-row: 1; /* 第一行 */
+            background-color: rgba(255, 255, 255, 0.9); /* 白色背景，半透明效果 */
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            z-index: 1; /* 确保文本在iframe之上 */
+            background-color: #FFFFE0
+        }
+        .botton-text{
+            grid-column: span 3;
+            grid-row: span 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="header-text">
+        全国人口普查住房数据分析及可视化
+    </div>
+    <iframe src="./第七次人口普查户均房间数扇形图.html" class="medium-chart"></iframe>
+    <iframe src="./户均房间数变化折线图.html" class="medium-chart"></iframe>
+    <iframe src="./户均房间数前十的省份条形图.html" class="abc-chart"></iframe>
+    <iframe src="./第七次人口普查户均房间数与房间总数地图分布.html" class="large-chart"></iframe>
+    <iframe src="./住房总间数变化堆积柱状图.html" class="length-chart"></iframe>
+    <iframe src="./全国户占间数统计柱状图.html" class="medium-chart"></iframe>
+    <iframe src="./户主受教育程度与人均住房间数关系柱形图.html"class="smo-chart" ></iframe>
+    <iframe src="./户主受教育程度与人均住房建筑面积关系柱形图.html" class="smo-chart"></iframe>
+    <iframe src="./户主受教育程度与家庭人均住房面积关系热力图.html" class="large2-chart"></iframe>
+    <div class="smo-chart">
+    </div>
+    <div class="botton-text">
+        学院：洛阳理工学院
+    </div>
+    <div class="botton-text">
+        制作人：B21041818戴钰鋆
+    </div>
+</div>
+</body>
+</html>
